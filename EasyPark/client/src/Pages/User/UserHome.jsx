@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import SideBar from "../Components/User/Sidebar.jsx";
+import SideBar from "../../Components/User/Sidebar.jsx";
 import {IoCarSport, IoSearchOutline} from "react-icons/io5";
-import Profile from "../Components/User/Profile.jsx";
-import Home from "../assets/bg.svg";
-import AddReserCard from "../Components/User/AddReservationCard.jsx";
+import Profile from "../../Components/User/Profile.jsx";
+import Home from "../../assets/bg.svg";
+import AddReserCard from "../../Components/User/AddReservationCard.jsx";
+import ReservationCard from "../../Components/User/ReservationCard.jsx";
 
 function UserHome() {
     const [showAddCard, setShowAddCard] = useState(false);
@@ -33,6 +34,7 @@ function UserHome() {
                     </div>
                     <Profile/>
                 </div>
+                   <ReservationCard/>
                 <div className='w-full text-center text-gray-600 py-4'>All right reserved </div>
             </div>
             <span className="absolute bottom-8 right-8 text-[45px] text-white rounded-full bg-orange-400 p-2 hover:scale-110 duration-200 cursor-pointer animate-bounce "

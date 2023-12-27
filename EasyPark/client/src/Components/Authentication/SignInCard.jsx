@@ -13,6 +13,9 @@ function SignInCard() {
     const goToFirst = () => {
         navigate('/UserHome');
     };
+    const goToAdmin= () => {
+        navigate('/Dashboard');
+    };
 
     const [isFocused, setIsFocused] = useState(null);
     const [showPassword, setShowPassword] = useState(false);
@@ -40,7 +43,7 @@ function SignInCard() {
                 </h3>
                 <div
                     className="mt-8 flex md:flex-row flex-col gap-6 bg-white md:p-6 p-2 rounded-xl mx-auto border-2 border-gray-600 sm:w-[50%] w-full">
-                    <form className="flex flex-col items-center flex-1 gap-5 px-4 ">
+                    <form className="flex flex-col items-center flex-1 gap-5 px-4">
                         <BsPersonCircle size={70} />
                         {inputs.map((input, index) =>
                             <div
@@ -90,7 +93,7 @@ function SignInCard() {
                             Connexion
                         </button>
                         <div className="flex flex-col items-center">
-                            <span className="text-gray-600 font-medium hover:text-orange-500 cursor-pointer"> Mot de passe oublié ?</span>
+                            <span className="text-gray-600 font-medium hover:text-orange-500 cursor-pointer"onClick={goToAdmin}> Mot de passe oublié ?</span>
                         </div>
                     </form>
                 </div>

@@ -4,14 +4,15 @@ import Landing from "./Pages/Landing.jsx";
 import {Route, Routes} from "react-router-dom";
 import SignIn from "./Pages/SignIn.jsx";
 import SignUp from "./Pages/SignUp.jsx";
-
-import UserHome from "./Pages/UserHome.jsx";
-import Historique from "./Pages/historique.jsx";
-import Subscription from "./Pages/Subscription.jsx";
+import UserHome from "./Pages/User/UserHome.jsx";
+import Historique from "./Pages/User/historique.jsx";
+import Subscription from "./Pages/User/Subscription.jsx";
+import AdminHome from "./Pages/Admin/AdminHome.jsx";
+import Management from "./Pages/Admin/Management.jsx";
+import Plan from "./Pages/Admin/Plan.jsx";
 
 function App() {
     return (
-
         <Routes>
             <Route path="/" element={<Landing/>}/>
             <Route path="/SignIn" element={<SignIn/>}/>
@@ -19,6 +20,10 @@ function App() {
             <Route path="/UserHome" element={<UserHome/>}/>
             <Route path="/historique" element={<Historique/>}/>
             <Route path="/Subscription" element={<Subscription/>}/>
+            <Route path="/Dashboard" element={<AdminHome/>}/>
+            <Route path="/Management" element={<Management/>}/>
+            <Route path="/Plan" element={<Plan/>}/>
+
         </Routes>
     );
 }
