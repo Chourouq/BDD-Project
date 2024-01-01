@@ -32,12 +32,16 @@ exports.register = (req, res)=>{
                 emailAddress,
                 hashedPassword
             ];
-            db.query('INSERT INTO client (firstName, lastName, phone, email, password) VALUES(?,?,?,?,?)', [values], (error, results)=>{
+            db.query('INSERT INTO client (firstName, lastName, phone, email, password) VALUES(?,?,?,?,?)', values, (error, results)=>{
                 if(error){
-                    res.json({error: 'Inserting data error in server'});
-                    console.log("error while inserting");
+                    /*res.json({error: 'Inserting data error in server'});
+                    console.log("error while inserting");*/
+                    console.error('Error while inserting:', error); // Log the error details
+                    return res.json({ error: 'Inserting data error in server' });
                 }else{
+                    console.log(results);
                     return res.json({Status: "Success"});
+
                 }
             });
         }catch{
