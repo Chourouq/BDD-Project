@@ -4,18 +4,48 @@ import { useNavigate } from "react-router-dom";
 import { IoMailOutline, IoKeyOutline } from 'react-icons/io5';
 import { RiEyeFill, RiEyeOffFill } from 'react-icons/ri';
 import {BsPersonCircle} from "react-icons/bs";
+import axios from 'axios';
 
 function SignInCard() {
+    const [formData, setFormData] = useState({
+        emailAddress: '',
+        password: '',
+    });
+    const handleChange = (event, inputField) => {
+        const { value } = event.target;
+        setFormData({ ...formData, [inputField]: value });
+    };
     const navigate = useNavigate();
+    
     const goToSignUp = () => {
         navigate('/SignUp');
     };
-    const goToFirst = () => {
+    /*const goToFirst = () => {
         navigate('/UserHome');
     };
     const goToAdmin= () => {
         navigate('/Dashboard');
     };
+    };*/
+
+    const handleSubmit = async (event)=>{
+        event.preventDefault();
+        console.log('Form Data:', formData);
+        try{
+            const response = await axios.post('http://localhost:8000/auth/login', formData).then(res => {
+                if(res.data.Status === "Success"){
+                    navigate('/UserHome');
+                }else{
+                    alert("error");
+                    console.log('ther is an error here');
+                }            
+            });
+            console.log('User created:', response.data);
+        }catch{
+            console.error('Error creating user:', error);
+        }
+    }
+
 
     const [isFocused, setIsFocused] = useState(null);
     const [showPassword, setShowPassword] = useState(false);
@@ -24,12 +54,14 @@ function SignInCard() {
         {
             icon: <IoMailOutline />,
             type: "email",
-            holder: "Email address"
+            holder: "Email address",
+            name: "emailAdress"
         },
         {
             icon: <IoKeyOutline />,
             type: showPassword ? "text" : "password",
             holder: "Password",
+            name: "password",
             toggleIcon: showPassword ? <RiEyeOffFill /> : <RiEyeFill />,
             onToggle: () => setShowPassword(!showPassword)
         },
@@ -43,7 +75,8 @@ function SignInCard() {
                 </h3>
                 <div
                     className="mt-8 flex md:flex-row flex-col gap-6 bg-white md:p-6 p-2 rounded-xl mx-auto border-2 border-gray-600 sm:w-[50%] w-full">
-                    <form className="flex flex-col items-center flex-1 gap-5 px-4">
+
+                    <form className="flex flex-col items-center flex-1 gap-5 px-4 " onSubmit={handleSubmit}>
                         <BsPersonCircle size={70} />
                         {inputs.map((input, index) =>
                             <div
@@ -67,6 +100,7 @@ function SignInCard() {
                                     placeholder={input.holder}
                                     onFocus={() => setIsFocused(index)}
                                     onBlur={() => setIsFocused(null)}
+                                    onChange={(e) => handleChange(e, input.name)}
                                 />
                                 {input.toggleIcon &&
                                     <div
@@ -87,8 +121,9 @@ function SignInCard() {
                             <span className="text-orange-500 font-medium hover:text-black cursor-pointer " onClick={goToSignUp}> Create an account</span>
                         </span>
                         <button
+                            type="submit"
                             className="bg-[#455A64] text-sm text-white hover:bg-[#F3EBE7] hover:text-[#FF6C22] duration-150  py-4 px-5 text-center rounded-full items-center shadow-xl hover:scale-105 "
-                            onClick={goToFirst}
+                            /*onClick={handleSubmit}*/
                         >
                             Connexion
                         </button>
