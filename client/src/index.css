@@ -1,0 +1,12 @@
+@import url('https://fonts.cdnfonts.com/css/mochiy-pop-one');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply scroll-smooth font-Mochiy;
+}
+.link {
+    @apply p-2.5 flex flex-row rounded-md gap-6 md:cursor-pointer cursor-default font-medium hover:bg-white hover:text-cyan-600 duration-300;
+}
