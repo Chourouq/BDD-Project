@@ -16,6 +16,12 @@ The project is documented in the following chapters:
 
 ---
 
+## 📄 Project Resources
+- [📘 Full Project Report (PDF)](./BDD_report.pdf)
+  ###
+  **Note**: The project report is too large to be rendered directly on GitHub, so please click to download it.
+  
+---
 ## 🛠️ Technologies Used
 
 ### **Back-End**
@@ -34,11 +40,7 @@ The project is documented in the following chapters:
 - **API Testing Tool**: POSTMAN  
   POSTMAN is used for building, testing, and documenting APIs, offering a user-friendly interface for testing endpoints, managing environments, and validating API responses.  
 
----
 
-## 📄 Project Resources
-- [📘 Full Project Report (PDF)](./BDD_report.pdf)
-  **Note**: The project report is too large to be rendered directly on GitHub, so please click to download it.
 
 ---
 
