@@ -1,4 +1,4 @@
-# EasyPark: Private Parking Management System
+# ParkEasy: Private Parking Management System
 ![Homesection Image](./welcomesection.png)
 ## 🌟 Project Description
 
