@@ -1,8 +1,8 @@
 # EasyPark: Private Parking Management System
-
+![Homesection Image](./welcomesection.png)
 ## 🌟 Project Description
 
-**EasyPark** is a private parking management system designed to streamline the process of reserving parking spaces, handling user subscriptions, and providing administrative tools for efficient parking management. This database application aims to solve the challenges associated with managing parking spaces by offering a dynamic interaction between users seeking available spots, making reservations, and subscribing to long-term plans.
+**ParkEasy** is a private parking management system designed to streamline the process of reserving parking spaces, handling user subscriptions, and providing administrative tools for efficient parking management. This database application aims to solve the challenges associated with managing parking spaces by offering a dynamic interaction between users seeking available spots, making reservations, and subscribing to long-term plans.
 
 ---
 
@@ -87,23 +87,18 @@ npm start
 # Navigate to the backend directory
 cd ../backend
 
-# (Optional) Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-
 # Install the dependencies
-pip install -r requirements.txt
+npm install
 
-# Start the FastAPI server
-uvicorn main:app --reload
-
+# Start the Express.js server
+npm start
 ```
 ### **4. Access the Application**
 
 After setting up the front-end and back-end, access the application as follows:
 
 - **Front-End**: Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
-- **Back-End**: Access the FastAPI API documentation at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
+- **Back-End**: To test your backend, use tools like [Postman](https://www.postman.com/) or access your endpoints directly in the browser (e.g., `http://localhost:5000`).
 
 ---
 
