@@ -67,14 +67,14 @@ First, clone the repository to your local machine:
 ```bash
 
 # Clone the repository
-git clone https://github.com/Chourouq/GL-Project.git
-cd GL-Project
+git clone https://github.com/Chourouq/BDD-Project.git
+cd EasyPark
 ```
 ### **2. Set Up the Front-End**
 ```bash
 
 # Navigate to the frontend directory
-cd frontend
+cd client
 
 # Install the dependencies
 npm install
@@ -85,7 +85,7 @@ npm start
 ### **3. Set Up the Back-End**
 ```bash
 # Navigate to the backend directory
-cd ../backend
+cd ../server
 
 # Install the dependencies
 npm install
