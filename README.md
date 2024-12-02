@@ -37,7 +37,7 @@ The project is documented in the following chapters:
 ---
 
 ## 📄 Project Resources
-- [📘 Full Project Report (PDF)](./EasyPark_Project_Report.pdf)
+- [📘 Full Project Report (PDF)](./BDD_report.pdf)
   **Note**: The project report is too large to be rendered directly on GitHub, so please click to download it.
 
 ---
